@@ -1,7 +1,6 @@
-function main() {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
+function add(a, b= 3) {
+  const total = a + b;
+  return total
 }
 
-document.addEventListener('DOMContentLoaded', main)
+const total = (a, b = 3) => a + b
