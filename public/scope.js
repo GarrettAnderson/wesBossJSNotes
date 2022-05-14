@@ -1,9 +1,11 @@
-//Global scope
+//GLOBAL SCOPE
+// th3e keyword var is bound to the window object and is globally scoped
 
 // Bad practice to rely on global scoped variables
   // leads to issues down the linne
 
-// Block scope
+// BLOCK SCOPE
+// let and const are block scoped
 
 // Between the curly brackets of function
 // If you want to access a variable that is block scoped,
@@ -38,3 +40,9 @@ function isCool(name) {
   console.log(cool)
   return cool
 }
+
+// JS IS A LEXICALLY SCOPED LANGUAGE or static scoped
+// scope or variable loockups depends on where they are defined
+
+
+// Function scoping
