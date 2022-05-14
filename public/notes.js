@@ -117,3 +117,39 @@ const wes = {
     console.log('hi wes')
   }
 }
+
+
+// CALLBACK functions
+
+// when a user does something like click on a button
+// or you want something to happen agter a certain amount of time has passed
+
+
+const button = document.querySelector('.clickMe')
+
+function handleClick() {
+  console.log('Great Clicking')
+}
+
+button.addEventListener('click', function() {
+  console.log('Nice job!')
+})
+
+//OR
+
+button.addEventListener('click', handleClick)
+
+
+// Timer CALLBACK
+
+setTimeout(wes.yellHi, 1000)
+
+// OR
+setTimeout(function() {
+  console.log('time to eat')
+}, 1000)
+
+//OR
+setTimeout(() => {
+  conosle.log('time to eat')
+}, 1000)
