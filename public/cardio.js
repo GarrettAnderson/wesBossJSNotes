@@ -25,14 +25,24 @@ ul.appendChild(li2)
 ul.appendChild(li3)
 console.log(ul)
 
+// WES BOS ANSWER
+// let ul2 = `
+//  <ul>
+//   <li>one</li>
+//   <li>two</li>
+//   <li>three</li>
+// `
+//  div.innerHTML = ul2
+
 div.appendChild(ul)
+// div.innerHTML = ul
 console.log(div)
 
 
 // create an image
 let image = document.createElement('img')
 // set the source to an image
-image.src = 'https://source.unsplash.com/random/300x300'
+image.src = 'https://source.unsplash.com/random/500'
 // set the width to 250
 image.width = '250'
 // add a class of cute
@@ -46,24 +56,42 @@ console.log(div)
 // with HTML string, make a div, with two paragraphs inside of it
 
 let string = `
-  <div>
+  <div class='myDiv'>
     <p>This is a paragraph.</p>
     <p>This is another paragraph.</p>
   </div>
 `
-
+// WES BOS ANSWER
+const ulElement = div.querySelector('ul')
+console.log(ulElement)
 // put this div before the unordered list from above
-div.prepend(string)
-console.log(div)
+// div.prepend(string) // This adds the string paragraph as an actual string and not an element to the DOM
+// console.log(div)
 
+// WES BOS ANSWER
+ulElement.insertAdjacentHTML('beforebegin', string)
 
 // add a class to the second paragraph called warning
-let secondPara = div.children
+let myDiv = div.querySelector('.myDiv')
 // secondPara.classList.add('warning')
-console.log(secondPara)
+console.log(myDiv.children[1])
+let selectedDiv = myDiv.children[1]
+selectedDiv.classList.add('warning')
+console.log(selectedDiv)
 // remove the first paragraph
 
+let removedDiv = myDiv.children[0]
+removedDiv.remove()
+
+console.log(myDiv)
+
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
+// have that function return html that looks like this:
+// <div class="playerCard">
+//   <h2>NAME — AGE</h2>
+//   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
+// </div>
+
 function generatePlayerCard(name, age, height) {
   let ageInDogYears = age * 7
   return `
@@ -73,14 +101,9 @@ function generatePlayerCard(name, age, height) {
   </div>
   `
 }
-// have that function return html that looks like this:
-// <div class="playerCard">
-//   <h2>NAME — AGE</h2>
-//   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
-// </div>
 
 // make a new div with a class of cards
-
+let cardsDiv = document.createElement('div')
 // make 4 player cards using generatePlayerCard
 
 // append those cards to the div
