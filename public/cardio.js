@@ -23,14 +23,20 @@ li3.textContent = 'three'
 ul.appendChild(li)
 ul.appendChild(li2)
 ul.appendChild(li3)
-
 console.log(ul)
 
-// create an image
+div.appendChild(ul)
+console.log(div)
 
+
+// create an image
+let image = document.createElement('img')
 // set the source to an image
+image.src = 'https://source.unsplash.com/random/300x300'
 // set the width to 250
+image.width = '250'
 // add a class of cute
+image.classList.add('cute')
 // add an alt of Cute Puppy
 // Append that image to the wrapper
 
