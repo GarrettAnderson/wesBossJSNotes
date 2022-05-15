@@ -41,16 +41,38 @@ image.classList.add('cute')
 image.alt = 'Cute Puppy'
 // Append that image to the wrapper
 div.appendChild(image)
-
 console.log(div)
+
 // with HTML string, make a div, with two paragraphs inside of it
+
+let string = `
+  <div>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </div>
+`
+
 // put this div before the unordered list from above
+div.prepend(string)
+console.log(div)
+
 
 // add a class to the second paragraph called warning
+let secondPara = div.children
+// secondPara.classList.add('warning')
+console.log(secondPara)
 // remove the first paragraph
 
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
-
+function generatePlayerCard(name, age, height) {
+  let ageInDogYears = age * 7
+  return `
+  <div class="playerCard">
+      <h2>${name} — ${age}</h2>
+      <p>They are ${height} and ${age} years old. In Dog years this person would be ${ageInDogYears}. That would be a tall dog!</p>
+  </div>
+  `
+}
 // have that function return html that looks like this:
 // <div class="playerCard">
 //   <h2>NAME — AGE</h2>
