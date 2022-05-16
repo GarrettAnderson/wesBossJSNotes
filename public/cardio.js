@@ -105,6 +105,10 @@ function generatePlayerCard(name, age, height) {
 // make a new div with a class of cards
 let cardsDiv = document.createElement('div')
 // make 4 player cards using generatePlayerCard
+generatePlayerCard('chris', 15, 34)
+generatePlayerCard('christy', 13, 34)
+generatePlayerCard('christine', 14, 34)
+generatePlayerCard('christopher', 12, 43)
 
 // append those cards to the div
 // put the div into the DOM just before the wrapper element
