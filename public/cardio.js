@@ -1,6 +1,6 @@
 // Make a div
 const div = document.createElement('div')
-
+const body = document.querySelector('body')
 // add a class of wrapper to it
 div.classList.add('wrapper')
 
@@ -105,13 +105,21 @@ function generatePlayerCard(name, age, height) {
 // make a new div with a class of cards
 let cardsDiv = document.createElement('div')
 // make 4 player cards using generatePlayerCard
-generatePlayerCard('chris', 15, 34)
-generatePlayerCard('christy', 13, 34)
-generatePlayerCard('christine', 14, 34)
-generatePlayerCard('christopher', 12, 43)
-
+let cardsHTML = generatePlayerCard('chris', 15, 34)
+cardsHTML += generatePlayerCard('christy', 13, 34)
+cardsHTML += generatePlayerCard('christine', 14, 34)
+cardsHTML += generatePlayerCard('christopher', 12, 43)
+console.log(cardsHTML)
 // append those cards to the div
+
+cardsDiv.insertAdjacentHTML('afterbegin', cardsHTML)
+// cardsDiv.innerHTML = cardsHTML
+console.log(cardsDiv)
+
 // put the div into the DOM just before the wrapper element
+
+div.insertAdjacentHTML('beforebegin', cardsDiv)
+
 // Bonus, put a delete Button on each card so when you click it, the whole card is removed
 
 // select all the buttons!
