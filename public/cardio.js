@@ -98,6 +98,7 @@ function generatePlayerCard(name, age, height) {
   <div class="playerCard">
       <h2>${name} — ${age}</h2>
       <p>They are ${height} and ${age} years old. In Dog years this person would be ${ageInDogYears}. That would be a tall dog!</p>
+      <button class="delete" type="button">&times; Delete</button>
   </div>
   `
 }
@@ -123,5 +124,15 @@ div.insertAdjacentHTML('beforebegin', cardsDiv)
 // Bonus, put a delete Button on each card so when you click it, the whole card is removed
 
 // select all the buttons!
+
+const buttons = document.querySelectorAll('.delete')
+
 // make out delete function
+function deleteCard(event) {
+  const buttonThatGotClicked = event.currentTarget
+  buttonThatGotClicked.parentElement.remove()
+  // OR
+  // buttonThatGotClicked.closest('.playerCard').remove()
+}
 // loop over them and attach a listener
+buttons.forEach(button => button.addEventListener('click', deleteCard))
