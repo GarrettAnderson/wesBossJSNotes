@@ -43,3 +43,6 @@
 
 //every key on the keyboard has its own event code
   // event.key
+
+
+// adding a new note
